@@ -1,0 +1,2730 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CBLibrary.Repository.Core</name>
+    </assembly>
+    <members>
+        <member name="T:CBLibrary.Repository.Application.AppConstants">
+            <summary>
+            应用层常量
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.DEFAULTPASSPHRASE">
+            <summary>
+            Default pass phrase for SimpleStringCipher decrypt/encrypt operations
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.SS_ENABLEDLOGIN">
+            <summary>
+            启用登录
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.SS_ENABLEDREGISTER">
+            <summary>
+            启用注册
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.SS_ENABLEDLOGINBYPHONECAPTCHA">
+            <summary>
+            启用手机验证码登录
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.SS_RETRIEVEPASSWORDMODE">
+            <summary>
+            找回密码方式
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.SS_CHECKEDEMAILCONFIRMED">
+            <summary>
+            邮箱验证检查
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.SS_CHECKEDPHONENUMBERCONFIRMED">
+            <summary>
+            手机号验证检查
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.C_SUCCESS">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.C_FAILURE">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.C_BADREQUEST">
+            <summary>
+            错误请求:数据验证失败
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.C_UNAUTHORIZED">
+            <summary>
+            未授权:未登录
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.C_FORBIDDEN">
+            <summary>
+            禁止:权限不足
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.C_NOTFOUND">
+            <summary>
+            未找到
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.C_INTERNALSERVERERROR">
+            <summary>
+            服务器异常 
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_SUCCESS">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_FAILURE">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_INVALIDCAPTCHA">
+            <summary>
+            验证码错误
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_BADREQUEST">
+            <summary>
+            数据验证失败
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_UNAUTHORIZED">
+            <summary>
+            未授权:未登录
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_FORBIDDEN">
+            <summary>
+            禁止:权限不足
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_EXIST">
+            <summary>
+            已存在
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_NOTEXIST">
+            <summary>
+            不存在
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_GET_SUCCESS">
+            <summary>
+            请求数据成功
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_GET_FAILURE">
+            <summary>
+            请求数据失败
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_ADD_SUCCESS">
+            <summary>
+            添加成功
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_ADD_FAILURE">
+            <summary>
+            添加失败
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_UPDATE_SUCCESS">
+            <summary>
+            更新成功
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_UPDATE_FAILURE">
+            <summary>
+            更新失败
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_DELETE_SUCCESS">
+            <summary>
+            删除成功
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppConstants.M_DELETE_FAILURE">
+            <summary>
+            删除失败
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Application.AppServiceBase`4">
+            <summary>
+            应用服务基类
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TPrimaryKey"></typeparam>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TDto"></typeparam>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppServiceBase`4.Logger">
+            <summary>
+            ILogger
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppServiceBase`4.Mapper">
+            <summary>
+            IMapper
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppServiceBase`4.Accessor">
+            <summary>
+            IHttpContextAccessor
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppServiceBase`4.Repository">
+            <summary>
+            IRepository
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppServiceBase`4.CacheService">
+            <summary>
+            缓存服务
+            </summary>
+        </member>
+        <member name="F:CBLibrary.Repository.Application.AppServiceBase`4.UnitOfWork">
+            <summary>
+            IUnitOfWork
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Application.AppServiceBase`4.Cachekey">
+            <summary>
+            缓存Key
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Application.AppServiceBase`4.UseCache">
+            <summary>
+            是否使用缓存
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.#ctor(Microsoft.Extensions.Logging.ILogger{`0},AutoMapper.IMapper,Microsoft.AspNetCore.Http.IHttpContextAccessor,CBLibrary.Repository.UnitOfWork.IUnitOfWork,CBLibrary.Repository.Cache.ICacheService,CBLibrary.Repository.Repository.IRepositoryWithTypedId{`2,`1})">
+            <summary>
+            构造方法
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="accessor"></param>
+            <param name="unitOfWork"></param>
+            <param name="cacheService"></param>
+            <param name="repository"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.GetAllAsync">
+            <summary>
+            获取所有数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.GetAllFromCacheAsync">
+            <summary>
+            获取所有数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.GetByPredicateAsync(System.Func{`3,System.Boolean})">
+            <summary>
+            根据条件表达式查询
+            </summary>
+            <param name="predicate">条件表达式</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.GetByPredicateFromCacheAsync(System.Func{`3,System.Boolean})">
+            <summary>
+            根据条件表达式查询:FromCache
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.GetByIdAsync(`1)">
+            <summary>
+            根据主键id查询
+            </summary>
+            <param name="id">主键id</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.GetByIdFromCacheAsync(`1)">
+            <summary>
+            根据主键id查询:FromCache
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.GetEntityByIdAsync(`1,System.Boolean)">
+            <summary>
+            根据主键id查询
+            </summary>
+            <param name="id">主键id</param>
+            <param name="isTracking">是否跟踪</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.GetPaginationAsync``1(System.Linq.Expressions.Expression{System.Func{`2,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`2,``0}},System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.GetPaginationFromCacheAsync``1(System.Linq.Expressions.Expression{System.Func{`3,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`3,``0}},System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据:FromCache
+            </summary>
+            <typeparam name="TOrder"></typeparam>
+            <param name="whereLambda"></param>
+            <param name="orderLambda"></param>
+            <param name="desc"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.GetPaginationTupleAsync``1(System.Linq.Expressions.Expression{System.Func{`2,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`2,``0}},System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.GetPaginationTupleFromCacheAsync``1(System.Linq.Expressions.Expression{System.Func{`3,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`3,``0}},System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据:FromCache
+            </summary>
+            <typeparam name="TOrder"></typeparam>
+            <param name="whereLambda"></param>
+            <param name="orderLambda"></param>
+            <param name="desc"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.AnyAsync(System.Linq.Expressions.Expression{System.Func{`2,System.Boolean}})">
+            <summary>
+            是否存在
+            </summary>
+            <param name="predicate">条件表达式</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.AddAsync(`3)">
+            <summary>
+            添加
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.AddAsync(`2)">
+            <summary>
+            添加
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.AddRangeAsync(System.Collections.Generic.IEnumerable{`3})">
+            <summary>
+            批量添加
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.AddRangeAsync(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            批量添加
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.UpdateAsync(`3)">
+            <summary>
+            更新
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.UpdateAsync(`2)">
+            <summary>
+            更新
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.UpdateRangeAsync(System.Collections.Generic.IEnumerable{`3})">
+            <summary>
+            批量更新
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.UpdateRangeAsync(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            批量更新
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.DeleteAsync(`3)">
+            <summary>
+            物理删除
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.DeleteAsync(`2)">
+            <summary>
+            物理删除
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.DeleteRangeAsync(System.Collections.Generic.IEnumerable{`3})">
+            <summary>
+            批量物理删除
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.DeleteRangeAsync(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            批量物理删除
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.RemoveCache">
+            <summary>
+            清除缓存
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceBase`4.CommitAsync">
+            <summary>
+            提交到数据库(异步)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CBLibrary.Repository.Application.AppServiceCreationAudited`4">
+            <summary>
+            应用服务基类+添加审计
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TPrimaryKey"></typeparam>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TDto"></typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceCreationAudited`4.#ctor(Microsoft.Extensions.Logging.ILogger{`0},AutoMapper.IMapper,Microsoft.AspNetCore.Http.IHttpContextAccessor,CBLibrary.Repository.UnitOfWork.IUnitOfWork,CBLibrary.Repository.Cache.ICacheService,CBLibrary.Repository.Repository.IRepositoryWithTypedId{`2,`1})">
+            <summary>
+            构造方法
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="accessor"></param>
+            <param name="unitOfWork"></param>
+            <param name="cacheService"></param>
+            <param name="repository"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceCreationAudited`4.AddAsync(`3)">
+            <summary>
+            添加
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceCreationAudited`4.AddAsync(`2)">
+            <summary>
+            添加
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceCreationAudited`4.AddRangeAsync(System.Collections.Generic.IEnumerable{`3})">
+            <summary>
+            批量添加
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceCreationAudited`4.AddRangeAsync(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            批量添加
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="T:CBLibrary.Repository.Application.AppServiceCreationModificationAudited`4">
+            <summary>
+            应用服务基类+添加审计,修改审计
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceCreationModificationAudited`4.#ctor(Microsoft.Extensions.Logging.ILogger{`0},AutoMapper.IMapper,Microsoft.AspNetCore.Http.IHttpContextAccessor,CBLibrary.Repository.UnitOfWork.IUnitOfWork,CBLibrary.Repository.Cache.ICacheService,CBLibrary.Repository.Repository.IRepositoryWithTypedId{`2,`1})">
+            <summary>
+            构造方法
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="accessor"></param>
+            <param name="unitOfWork"></param>
+            <param name="cacheService"></param>
+            <param name="repository"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceCreationModificationAudited`4.UpdateAsync(`3)">
+            <summary>
+            更新
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceCreationModificationAudited`4.UpdateAsync(`2)">
+            <summary>
+            更新
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceCreationModificationAudited`4.UpdateRangeAsync(System.Collections.Generic.IEnumerable{`3})">
+            <summary>
+            批量更新
+            </summary>
+            <param name="input">实体集合</param>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceCreationModificationAudited`4.UpdateRangeAsync(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            批量更新
+            </summary>
+            <param name="input">实体集合</param>
+        </member>
+        <member name="T:CBLibrary.Repository.Application.AppServiceFullAudited`4">
+            <summary>
+            应用服务基类+添加审计,修改审计,删除审计+软删除
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.#ctor(Microsoft.Extensions.Logging.ILogger{`0},AutoMapper.IMapper,Microsoft.AspNetCore.Http.IHttpContextAccessor,CBLibrary.Repository.UnitOfWork.IUnitOfWork,CBLibrary.Repository.Cache.ICacheService,CBLibrary.Repository.Repository.IRepositoryWithTypedId{`2,`1})">
+            <summary>
+            构造方法
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="accessor"></param>
+            <param name="unitOfWork"></param>
+            <param name="cacheService"></param>
+            <param name="repository"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.GetByPredicateAsync(System.Func{`3,System.Boolean},System.Boolean)">
+            <summary>
+            根据条件表达式查询
+            </summary>
+            <param name="predicate">条件表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:包含)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.GetByPredicateFromCacheAsync(System.Func{`3,System.Boolean},System.Boolean)">
+            <summary>
+            根据条件表达式查询:FromCache
+            </summary>
+            <param name="predicate"></param>
+            <param name="includeDeleted"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.GetByIdAsync(`1,System.Boolean)">
+            <summary>
+            根据主键id查询
+            </summary>
+            <param name="id">主键id</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:包含)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.GetByIdFromCacheAsync(`1,System.Boolean)">
+            <summary>
+            根据主键id查询:FromCache
+            </summary>
+            <param name="id"></param>
+            <param name="includeDeleted"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.GetEntityByIdAsync(`1,System.Boolean,System.Boolean)">
+            <summary>
+            根据主键id查询
+            </summary>
+            <param name="id">主键id</param>
+            <param name="isTracking">是否跟踪</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:包含)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.GetPaginationAsync``1(System.Linq.Expressions.Expression{System.Func{`2,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`2,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:不包含)</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.GetPaginationFromCacheAsync``1(System.Linq.Expressions.Expression{System.Func{`3,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`3,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据:FromCache
+            </summary>
+            <typeparam name="TOrder"></typeparam>
+            <param name="whereLambda"></param>
+            <param name="orderLambda"></param>
+            <param name="includeDeleted"></param>
+            <param name="desc"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.GetPaginationTupleAsync``1(System.Linq.Expressions.Expression{System.Func{`2,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`2,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:不包含)</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.GetPaginationTupleFromCacheAsync``1(System.Linq.Expressions.Expression{System.Func{`3,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`3,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据:FromCache
+            </summary>
+            <typeparam name="TOrder"></typeparam>
+            <param name="whereLambda"></param>
+            <param name="orderLambda"></param>
+            <param name="includeDeleted"></param>
+            <param name="desc"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.SoftDeleteAsync(`3)">
+            <summary>
+            逻辑删除
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.SoftDeleteAsync(`2)">
+            <summary>
+            逻辑删除
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.SoftDeleteRangeAsync(System.Collections.Generic.IEnumerable{`3})">
+            <summary>
+            批量逻辑删除
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceFullAudited`4.SoftDeleteRangeAsync(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            批量逻辑删除
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="T:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4">
+            <summary>
+            应用服务基类+删除审计+软删除
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.#ctor(Microsoft.Extensions.Logging.ILogger{`0},AutoMapper.IMapper,Microsoft.AspNetCore.Http.IHttpContextAccessor,CBLibrary.Repository.UnitOfWork.IUnitOfWork,CBLibrary.Repository.Cache.ICacheService,CBLibrary.Repository.Repository.IRepositoryWithTypedId{`2,`1})">
+            <summary>
+            构造方法
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="accessor"></param>
+            <param name="unitOfWork"></param>
+            <param name="cacheService"></param>
+            <param name="repository"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.GetByPredicateAsync(System.Func{`3,System.Boolean},System.Boolean)">
+            <summary>
+            根据条件表达式查询
+            </summary>
+            <param name="predicate">条件表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:包含)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.GetByPredicateFromCacheAsync(System.Func{`3,System.Boolean},System.Boolean)">
+            <summary>
+            根据条件表达式查询:FromCache
+            </summary>
+            <param name="predicate"></param>
+            <param name="includeDeleted"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.GetByIdAsync(`1,System.Boolean)">
+            <summary>
+            根据主键id查询
+            </summary>
+            <param name="id">主键id</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:包含)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.GetByIdFromCacheAsync(`1,System.Boolean)">
+            <summary>
+            根据主键id查询:FromCache
+            </summary>
+            <param name="id"></param>
+            <param name="includeDeleted"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.GetEntityByIdAsync(`1,System.Boolean,System.Boolean)">
+            <summary>
+            根据主键id查询
+            </summary>
+            <param name="id">主键id</param>
+            <param name="isTracking">是否跟踪</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:包含)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.GetPaginationAsync``1(System.Linq.Expressions.Expression{System.Func{`2,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`2,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:不包含)</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.GetPaginationFromCacheAsync``1(System.Linq.Expressions.Expression{System.Func{`3,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`3,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据:FromCache
+            </summary>
+            <typeparam name="TOrder"></typeparam>
+            <param name="whereLambda"></param>
+            <param name="orderLambda"></param>
+            <param name="includeDeleted"></param>
+            <param name="desc"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.GetPaginationTupleAsync``1(System.Linq.Expressions.Expression{System.Func{`2,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`2,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:不包含)</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.GetPaginationTupleFromCacheAsync``1(System.Linq.Expressions.Expression{System.Func{`3,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`3,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据:FromCache
+            </summary>
+            <typeparam name="TOrder"></typeparam>
+            <param name="whereLambda"></param>
+            <param name="orderLambda"></param>
+            <param name="includeDeleted"></param>
+            <param name="desc"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.SoftDeleteAsync(`3)">
+            <summary>
+            逻辑删除
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.SoftDeleteAsync(`2)">
+            <summary>
+            逻辑删除
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.SoftDeleteRangeAsync(System.Collections.Generic.IEnumerable{`3})">
+            <summary>
+            批量逻辑删除
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.AppServiceSoftDeletionAudited`4.SoftDeleteRangeAsync(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            批量逻辑删除
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="T:CBLibrary.Repository.Application.IAppServiceBase`3">
+            <summary>
+            应用层基类接口
+            </summary>
+            <typeparam name="TPrimaryKey"></typeparam>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TDto"></typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.GetAllAsync">
+            <summary>
+            获取所有数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.GetAllFromCacheAsync">
+            <summary>
+            获取所有数据:FromCache
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.GetByPredicateAsync(System.Func{`2,System.Boolean})">
+            <summary>
+            根据条件表达式查询
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.GetByPredicateFromCacheAsync(System.Func{`2,System.Boolean})">
+            <summary>
+            根据条件表达式查询:FromCache
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.GetByIdAsync(`0)">
+            <summary>
+            根据主键id查询
+            </summary>
+            <param name="id">主键Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.GetByIdFromCacheAsync(`0)">
+            <summary>
+            根据主键id查询:FromCache
+            </summary>
+            <param name="id">主键Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.GetEntityByIdAsync(`0,System.Boolean)">
+            <summary>
+            根据主键id查询
+            </summary>
+            <param name="id">主键Id</param>
+            <param name="isTracking">是否跟踪</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.AddAsync(`2)">
+            <summary>
+            添加
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.AddAsync(`1)">
+            <summary>
+            添加
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.AddRangeAsync(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            批量添加
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.AddRangeAsync(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            批量添加
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.UpdateAsync(`2)">
+            <summary>
+            更新
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.UpdateAsync(`1)">
+            <summary>
+            更新
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.UpdateRangeAsync(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            批量更新
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.UpdateRangeAsync(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            批量更新
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.DeleteAsync(`2)">
+            <summary>
+            物理删除
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.DeleteAsync(`1)">
+            <summary>
+            物理删除
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.DeleteRangeAsync(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            批量物理删除
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.DeleteRangeAsync(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            批量物理删除
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.GetPaginationAsync``1(System.Linq.Expressions.Expression{System.Func{`1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`1,``0}},System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.GetPaginationFromCacheAsync``1(System.Linq.Expressions.Expression{System.Func{`2,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`2,``0}},System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据:FromCache
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.GetPaginationTupleAsync``1(System.Linq.Expressions.Expression{System.Func{`1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`1,``0}},System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.GetPaginationTupleFromCacheAsync``1(System.Linq.Expressions.Expression{System.Func{`2,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`2,``0}},System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据:FromCache
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceBase`3.AnyAsync(System.Linq.Expressions.Expression{System.Func{`1,System.Boolean}})">
+            <summary>
+            是否存在
+            </summary>
+            <param name="predicate">条件表达式</param>
+            <returns></returns>
+        </member>
+        <member name="T:CBLibrary.Repository.Application.IAppServiceCreationAudited`3">
+            <summary>
+            应用层接口+添加审计
+            </summary>
+            <typeparam name="TPrimaryKey"></typeparam>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TDto"></typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Application.IAppServiceCreationModificationAudited`3">
+            <summary>
+            应用层接口+添加审计,修改审计
+            </summary>
+            <typeparam name="TPrimaryKey"></typeparam>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TDto"></typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Application.IAppServiceFullAudited`3">
+            <summary>
+            应用层接口+添加审计,修改审计,删除审计+软删除
+            </summary>
+            <typeparam name="TPrimaryKey"></typeparam>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TDto"></typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3">
+            <summary>
+            应用层接口+删除审计+软删除
+            </summary>
+            <typeparam name="TPrimaryKey"></typeparam>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TDto"></typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.GetByPredicateAsync(System.Func{`2,System.Boolean},System.Boolean)">
+            <summary>
+            根据条件表达式查询
+            </summary>
+            <param name="predicate">条件表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:包含)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.GetByPredicateFromCacheAsync(System.Func{`2,System.Boolean},System.Boolean)">
+            <summary>
+            根据条件表达式查询:FromCache
+            </summary>
+            <param name="predicate">条件表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:包含)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.GetByIdAsync(`0,System.Boolean)">
+            <summary>
+            根据主键id查询
+            </summary>
+            <param name="id">主键Id</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:包含)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.GetByIdFromCacheAsync(`0,System.Boolean)">
+            <summary>
+            根据主键id查询:FromCache
+            </summary>
+            <param name="id">主键Id</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:包含)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.GetEntityByIdAsync(`0,System.Boolean,System.Boolean)">
+            <summary>
+            根据主键id查询
+            </summary>
+            <param name="id">主键Id</param>
+            <param name="isTracking">是否跟踪</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:包含)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.GetPaginationAsync``1(System.Linq.Expressions.Expression{System.Func{`1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`1,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:不包含)</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.GetPaginationFromCacheAsync``1(System.Linq.Expressions.Expression{System.Func{`2,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`2,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据:FromCache
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:不包含)</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.GetPaginationTupleAsync``1(System.Linq.Expressions.Expression{System.Func{`1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`1,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:不包含)</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.GetPaginationTupleFromCacheAsync``1(System.Linq.Expressions.Expression{System.Func{`2,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`2,``0}},System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            获取分页数据:FromCache
+            </summary>
+            <typeparam name="TOrder">排序字段</typeparam>
+            <param name="whereLambda">条件表达式</param>
+            <param name="orderLambda">排序表达式</param>
+            <param name="includeDeleted">是否包含已(软)删除数据(默认:不包含)</param>
+            <param name="desc">排序类型(默认:降序)</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">每页条数</param>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.SoftDeleteAsync(`2)">
+            <summary>
+            软删除
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.SoftDeleteAsync(`1)">
+            <summary>
+            软删除
+            </summary>
+            <param name="input">实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.SoftDeleteRangeAsync(System.Collections.Generic.IEnumerable{`2})">
+            <summary>
+            批量软删除
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Application.IAppServiceSoftDeletionAudited`3.SoftDeleteRangeAsync(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            批量软删除
+            </summary>
+            <param name="input">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="T:CBLibrary.Repository.Auditing.ICreationAudited">
+            <summary>
+            创建审计
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Auditing.ICreationAudited.CreatorUserId">
+            <summary>
+            创建人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Auditing.ICreationAudited.CreationTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Auditing.IFullAudited">
+            <summary>
+            添加审计,修改审计,删除审计+软删除
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Auditing.IModificationAudited">
+            <summary>
+            修改审计
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Auditing.IModificationAudited.LastModifierUserId">
+            <summary>
+            最后修改人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Auditing.IModificationAudited.LastModificationTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Auditing.ISoftDeletionAudited">
+            <summary>
+            软删除审计
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Auditing.ISoftDeletionAudited.IsDeleted">
+            <summary>
+            是否删除(软删除标识)
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Auditing.ISoftDeletionAudited.DeleterUserId">
+            <summary>
+            删除人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Auditing.ISoftDeletionAudited.DeletionTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.BootStrapper.DependencyInjectionExtensions">
+            <summary>
+            依赖注入扩展
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.BootStrapper.DependencyInjectionExtensions.AddRepository(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            注入仓储和工作单元
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Cache.ECachePrefix">
+            <summary>
+            缓存前缀
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Cache.ECachePrefixExtensions">
+            <summary>
+            缓存前缀扩展
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ECachePrefixExtensions.GetKey(CBLibrary.Repository.Cache.ECachePrefix,System.String)">
+            <summary>
+            获取缓存key
+            </summary>
+            <param name="prefix"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CBLibrary.Repository.Cache.ICacheService">
+            <summary>
+            缓存服务接口
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.Exists(System.String)">
+            <summary>
+            验证缓存项是否存在
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.ExistsAsync(System.String)">
+            <summary>
+            验证缓存项是否存在-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.Add(System.String,System.Object)">
+            <summary>
+            添加缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.AddAsync(System.String,System.Object)">
+            <summary>
+            添加缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:CBLibrary.Repository.Cache.ICacheService.Add(System.String,System.Object,System.TimeSpan,System.Boolean)" -->
+        <!-- Badly formed XML comment ignored for member "M:CBLibrary.Repository.Cache.ICacheService.AddAsync(System.String,System.Object,System.TimeSpan,System.Boolean)" -->
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.Get``1(System.String)">
+            <summary>
+            获取缓存
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.GetAsync``1(System.String)">
+            <summary>
+            获取缓存-异步
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.Get``1(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取缓存集合
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.GetAsync``1(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取缓存集合-异步
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.Update(System.String,System.Object)">
+            <summary>
+            修改缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.UpdateAsync(System.String,System.Object)">
+            <summary>
+            修改缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.Update(System.String,System.Object,System.TimeSpan,System.Boolean)">
+            <summary>
+            修改缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiration">缓存时长</param>
+            <param name="isSliding">是否滑动过期(如果在过期时间内有操作,则以当前时间点延长过期时间)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.UpdateAsync(System.String,System.Object,System.TimeSpan,System.Boolean)">
+            <summary>
+            修改缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiration">缓存时长</param>
+            <param name="isSliding">是否滑动过期(如果在过期时间内有操作,则以当前时间点延长过期时间)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.Remove(System.String)">
+            <summary>
+            删除缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.RemoveAsync(System.String)">
+            <summary>
+            删除缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.Remove(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            批量删除缓存
+            </summary>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.ICacheService.RemoveAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            批量删除缓存-异步
+            </summary>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="T:CBLibrary.Repository.Cache.MemoryCacheProvider">
+            <summary>
+            内存缓存提供者
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.Exists(System.String)">
+            <summary>
+            验证缓存项是否存在
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.ExistsAsync(System.String)">
+            <summary>
+            验证缓存项是否存在-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.Add(System.String,System.Object)">
+            <summary>
+            添加缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.AddAsync(System.String,System.Object)">
+            <summary>
+            添加缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.Add(System.String,System.Object,System.TimeSpan,System.Boolean)">
+            <summary>
+            添加缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiration">过期时间</param>
+            <param name="isSliding">是否滑动过期</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.AddAsync(System.String,System.Object,System.TimeSpan,System.Boolean)">
+            <summary>
+            添加缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiration">过期时间</param>
+            <param name="isSliding">是否滑动过期</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.Get``1(System.String)">
+            <summary>
+            获取缓存
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.GetAsync``1(System.String)">
+            <summary>
+            获取缓存-异步
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.Get``1(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取缓存
+            </summary>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.GetAsync``1(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取缓存-异步
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.Update(System.String,System.Object)">
+            <summary>
+            修改缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.UpdateAsync(System.String,System.Object)">
+            <summary>
+            修改缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.Update(System.String,System.Object,System.TimeSpan,System.Boolean)">
+            <summary>
+            修改缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiration">过期时间</param>
+            <param name="isSliding">是否滑动过期</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.UpdateAsync(System.String,System.Object,System.TimeSpan,System.Boolean)">
+            <summary>
+            修改缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiration">过期时间</param>
+            <param name="isSliding">是否滑动过期</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.Remove(System.String)">
+            <summary>
+            删除缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.RemoveAsync(System.String)">
+            <summary>
+            删除缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.Remove(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            删除缓存
+            </summary>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.RemoveAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            删除缓存-异步
+            </summary>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.MemoryCacheProvider.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Cache.RedisCacheProvider">
+            <summary>
+            Redis缓存提供者
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.Exists(System.String)">
+            <summary>
+            验证缓存项是否存在
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.ExistsAsync(System.String)">
+            <summary>
+            验证缓存项是否存在-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.Add(System.String,System.Object)">
+            <summary>
+            添加缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.AddAsync(System.String,System.Object)">
+            <summary>
+            添加缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.Add(System.String,System.Object,System.TimeSpan,System.Boolean)">
+            <summary>
+            添加缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiration">过期时间</param>
+            <param name="isSliding">是否滑动过期</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.AddAsync(System.String,System.Object,System.TimeSpan,System.Boolean)">
+            <summary>
+            添加缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiration">过期时间</param>
+            <param name="isSliding">是否滑动过期</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.Get``1(System.String)">
+            <summary>
+            获取缓存
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.GetAsync``1(System.String)">
+            <summary>
+            获取缓存-异步
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.Get``1(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取缓存
+            </summary>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.GetAsync``1(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取缓存-异步
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.Update(System.String,System.Object)">
+            <summary>
+            修改缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.UpdateAsync(System.String,System.Object)">
+            <summary>
+            修改缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.Update(System.String,System.Object,System.TimeSpan,System.Boolean)">
+            <summary>
+            修改缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiration">过期时间</param>
+            <param name="isSliding">是否滑动过期</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.UpdateAsync(System.String,System.Object,System.TimeSpan,System.Boolean)">
+            <summary>
+            修改缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiration">过期时间</param>
+            <param name="isSliding">是否滑动过期</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.Remove(System.String)">
+            <summary>
+            删除缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.RemoveAsync(System.String)">
+            <summary>
+            删除缓存-异步
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.Remove(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            删除缓存
+            </summary>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.RemoveAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            删除缓存-异步
+            </summary>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Cache.RedisCacheProvider.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoBase">
+            <summary>
+            Dto基类
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Dto.DtoBase.CreateMap(AutoMapper.Configuration.MapperConfigurationExpression)">
+            <summary>
+            AutoMapper映射配置
+            </summary>
+            <param name="expression"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoBase`1">
+            <summary>
+            Dto泛型基类
+            </summary>
+            <typeparam name="TPrimaryKey"></typeparam>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoBase`1.Id">
+            <summary>
+            主键Id
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoIntId">
+            <summary>
+            int主键基类
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoIntIdWithSoftDeletionAudited">
+            <summary>
+            int主键基类+删除审计+软删除
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoIntIdWithSoftDeletionAudited.IsDeleted">
+            <summary>
+            是否删除(软删除)
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoIntIdWithSoftDeletionAudited.DeleterUserId">
+            <summary>
+            删除人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoIntIdWithSoftDeletionAudited.DeletionTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoIntIdWithCreationAudited">
+            <summary>
+            int主键基类+添加审计
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoIntIdWithCreationAudited.CreatorUserId">
+            <summary>
+            创建人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoIntIdWithCreationAudited.CreationTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoIntIdWithCreationModificationAudited">
+            <summary>
+            int主键基类+添加审计,修改审计
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoIntIdWithCreationModificationAudited.LastModifierUserId">
+            <summary>
+            最后修改人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoIntIdWithCreationModificationAudited.LastModificationTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoIntIdWithFullAudited">
+            <summary>
+            int主键基类+添加审计,修改审计,删除审计+软删除
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoIntIdWithFullAudited.IsDeleted">
+            <summary>
+            是否删除(软删除)
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoIntIdWithFullAudited.DeleterUserId">
+            <summary>
+            删除人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoIntIdWithFullAudited.DeletionTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoGuid">
+            <summary>
+            Guid主键基类
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoGuidWithSoftDeletionAudited">
+            <summary>
+            Guid主键基类+删除审计+软删除
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoGuidWithSoftDeletionAudited.IsDeleted">
+            <summary>
+            是否删除(软删除)
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoGuidWithSoftDeletionAudited.DeleterUserId">
+            <summary>
+            删除人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoGuidWithSoftDeletionAudited.DeletionTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoGuidWithCreationAudited">
+            <summary>
+            Guid主键基类+添加审计
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoGuidWithCreationAudited.CreatorUserId">
+            <summary>
+            创建人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoGuidWithCreationAudited.CreationTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoGuidWithCreationModificationAudited">
+            <summary>
+            Guid主键基类+添加审计,修改审计
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoGuidWithCreationModificationAudited.LastModifierUserId">
+            <summary>
+            最后修改人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoGuidWithCreationModificationAudited.LastModificationTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.DtoGuidWithFullAudited">
+            <summary>
+            Guid主键基类+添加审计,修改审计,删除审计+软删除
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoGuidWithFullAudited.IsDeleted">
+            <summary>
+            是否删除(软删除)
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoGuidWithFullAudited.DeleterUserId">
+            <summary>
+            删除人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.DtoGuidWithFullAudited.DeletionTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.PaginationDto">
+            <summary>
+            分页
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.PaginationDto.PageIndex">
+            <summary>
+            页码
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.PaginationDto.PageSize">
+            <summary>
+            每页数据条数
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.ResultMessage">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.ResultMessage.Code">
+            <summary>
+            状态码: 默认情况下,大于等于0时表示业务成功,否则为业务失败
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.ResultMessage.Message">
+            <summary>
+            状态码对应描述
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Dto.ResultMessage.#ctor(System.Int32,System.String)">
+            <summary>
+            全参构造函数
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Dto.ResultMessage.#ctor">
+            <summary>
+            状态为0的业务成功消息
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Dto.ResultMessage`1">
+            <summary>
+            Api请求结果的泛型扩展
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:CBLibrary.Repository.Dto.ResultMessage`1.Data">
+            <summary>
+            请求的数据
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Dto.ResultMessage`1.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Dto.ResultMessage`1.#ctor(`0,System.Int32,System.String)">
+            <summary>
+            全参构造函数
+            </summary>
+            <param name="data"></param>
+            <param name="code"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityBase">
+            <summary>
+            领域模型基类
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityBase`1">
+            <summary>
+            领域模型基类(包含主键Id,LastModifierUser,LastModificationTime)
+            </summary>
+            <typeparam name="TPrimaryKey"></typeparam>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityBase`1.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityIntId">
+            <summary>
+            int主键基类
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityIntIdWithSoftDeletionAudited">
+            <summary>
+            int主键基类+删除审计+软删除
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityIntIdWithSoftDeletionAudited.IsDeleted">
+            <summary>
+            是否删除(软删除标识)
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityIntIdWithSoftDeletionAudited.DeleterUserId">
+            <summary>
+            删除人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityIntIdWithSoftDeletionAudited.DeletionTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityIntIdWithCreationAudited">
+            <summary>
+            int主键基类+添加审计
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityIntIdWithCreationAudited.CreatorUserId">
+            <summary>
+            创建人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityIntIdWithCreationAudited.CreationTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityIntIdWithCreationModificationAudited">
+            <summary>
+            int主键基类+添加审计,修改审计
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityIntIdWithCreationModificationAudited.LastModifierUserId">
+            <summary>
+            最后修改人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityIntIdWithCreationModificationAudited.LastModificationTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityIntIdWithFullAudited">
+            <summary>
+            int主键基类+添加审计,修改审计,删除审计+软删除
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityIntIdWithFullAudited.IsDeleted">
+            <summary>
+            是否删除(软删除标识)
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityIntIdWithFullAudited.DeleterUserId">
+            <summary>
+            删除人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityIntIdWithFullAudited.DeletionTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityGuid">
+            <summary>
+            Guid主键基类
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityGuidWithSoftDeletionAudited">
+            <summary>
+            Guid主键基类+删除审计+软删除
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityGuidWithSoftDeletionAudited.IsDeleted">
+            <summary>
+            是否删除(软删除)
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityGuidWithSoftDeletionAudited.DeleterUserId">
+            <summary>
+            删除人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityGuidWithSoftDeletionAudited.DeletionTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityGuidWithCreationAudited">
+            <summary>
+            Guid主键基类+添加审计
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityGuidWithCreationAudited.CreatorUserId">
+            <summary>
+            创建人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityGuidWithCreationAudited.CreationTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityGuidWithCreationModificationAudited">
+            <summary>
+            Guid主键基类+添加审计,修改审计
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityGuidWithCreationModificationAudited.LastModifierUserId">
+            <summary>
+            最后修改人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityGuidWithCreationModificationAudited.LastModificationTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Entity.EntityGuidWithFullAudited">
+            <summary>
+            Guid主键基类+添加审计,修改审计,删除审计+软删除
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityGuidWithFullAudited.IsDeleted">
+            <summary>
+            是否删除(软删除)
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityGuidWithFullAudited.DeleterUserId">
+            <summary>
+            删除人Id
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Entity.EntityGuidWithFullAudited.DeletionTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="T:CBLibrary.Repository.Extensions.CollectionExtensions">
+            <summary>
+            集合扩展方法
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.CollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Checks whatever given collection object is null or has no item.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.CollectionExtensions.AddIfNotContains``1(System.Collections.Generic.ICollection{``0},``0)">
+            <summary>
+            Adds an item to the collection if it's not already in the collection.
+            </summary>
+            <param name="source">Collection</param>
+            <param name="item">Item to check and add</param>
+            <typeparam name="T">Type of the items in the collection</typeparam>
+            <returns>Returns True if added, returns False if not.</returns>
+        </member>
+        <member name="T:CBLibrary.Repository.Extensions.HttpContextExtensions">
+            <summary>
+            HttpContext扩展方法
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.HttpContextExtensions.GetUserId(Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            获取用户Id
+            </summary>
+            <param name="accessor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.HttpContextExtensions.GetUserName(Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            获取用户名
+            </summary>
+            <param name="accessor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.HttpContextExtensions.GetUserRoles(Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            获取用户角色
+            </summary>
+            <param name="accessor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.HttpContextExtensions.GetUserIp(Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            获取用户IP
+            </summary>
+            <param name="accessor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CBLibrary.Repository.Extensions.StringExtensions">
+            <summary>
+            字符串扩展方法
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.EnsureEndsWith(System.String,System.Char)">
+            <summary>
+            Adds a char to end of given string if it does not ends with the char.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.EnsureEndsWith(System.String,System.Char,System.StringComparison)">
+            <summary>
+            Adds a char to end of given string if it does not ends with the char.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.EnsureEndsWith(System.String,System.Char,System.Boolean,System.Globalization.CultureInfo)">
+            <summary>
+            Adds a char to end of given string if it does not ends with the char.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.EnsureStartsWith(System.String,System.Char)">
+            <summary>
+            Adds a char to beginning of given string if it does not starts with the char.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.EnsureStartsWith(System.String,System.Char,System.StringComparison)">
+            <summary>
+            Adds a char to beginning of given string if it does not starts with the char.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.EnsureStartsWith(System.String,System.Char,System.Boolean,System.Globalization.CultureInfo)">
+            <summary>
+            Adds a char to beginning of given string if it does not starts with the char.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.IsNullOrEmpty(System.String)">
+            <summary>
+            Indicates whether this string is null or an System.String.Empty string.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            indicates whether this string is null, empty, or consists only of white-space characters.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.Left(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from beginning of the string.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="len"/> is bigger that string's length</exception>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.NormalizeLineEndings(System.String)">
+            <summary>
+            Converts line endings in the string to <see cref="P:System.Environment.NewLine"/>.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.NthIndexOf(System.String,System.Char,System.Int32)">
+            <summary>
+            Gets index of nth occurence of a char in a string.
+            </summary>
+            <param name="str">source string to be searched</param>
+            <param name="c">Char to search in <see cref="!:str"/></param>
+            <param name="n">Count of the occurence</param>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.RemovePostFix(System.String,System.String[])">
+            <summary>
+            Removes first occurrence of the given postfixes from end of the given string.
+            Ordering is important. If one of the postFixes is matched, others will not be tested.
+            </summary>
+            <param name="str">The string.</param>
+            <param name="postFixes">one or more postfix.</param>
+            <returns>Modified string or the same string if it has not any of given postfixes</returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.RemovePreFix(System.String,System.String[])">
+            <summary>
+            Removes first occurrence of the given prefixes from beginning of the given string.
+            Ordering is important. If one of the preFixes is matched, others will not be tested.
+            </summary>
+            <param name="str">The string.</param>
+            <param name="preFixes">one or more prefix.</param>
+            <returns>Modified string or the same string if it has not any of given prefixes</returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.Right(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from end of the string.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="len"/> is bigger that string's length</exception>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.Split(System.String,System.String)">
+            <summary>
+            Uses string.Split method to split given string by given separator.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.Split(System.String,System.String,System.StringSplitOptions)">
+            <summary>
+            Uses string.Split method to split given string by given separator.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.SplitToLines(System.String)">
+            <summary>
+            Uses string.Split method to split given string by <see cref="P:System.Environment.NewLine"/>.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.SplitToLines(System.String,System.StringSplitOptions)">
+            <summary>
+            Uses string.Split method to split given string by <see cref="P:System.Environment.NewLine"/>.
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.ToCamelCase(System.String,System.Boolean)">
+            <summary>
+            Converts PascalCase string to camelCase string.
+            </summary>
+            <param name="str">String to convert</param>
+            <param name="invariantCulture">Invariant culture</param>
+            <returns>camelCase of the string</returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.ToCamelCase(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Converts PascalCase string to camelCase string in specified culture.
+            </summary>
+            <param name="str">String to convert</param>
+            <param name="culture">An object that supplies culture-specific casing rules</param>
+            <returns>camelCase of the string</returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.ToSentenceCase(System.String,System.Boolean)">
+            <summary>
+            Converts given PascalCase/camelCase string to sentence (by splitting words by space).
+            Example: "ThisIsSampleSentence" is converted to "This is a sample sentence".
+            </summary>
+            <param name="str">String to convert.</param>
+            <param name="invariantCulture">Invariant culture</param>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.ToSentenceCase(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Converts given PascalCase/camelCase string to sentence (by splitting words by space).
+            Example: "ThisIsSampleSentence" is converted to "This is a sample sentence".
+            </summary>
+            <param name="str">String to convert.</param>
+            <param name="culture">An object that supplies culture-specific casing rules.</param>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.ToEnum``1(System.String)">
+            <summary>
+            Converts string to enum value.
+            </summary>
+            <typeparam name="T">Type of enum</typeparam>
+            <param name="value">String value to convert</param>
+            <returns>Returns enum object</returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.ToEnum``1(System.String,System.Boolean)">
+            <summary>
+            Converts string to enum value.
+            </summary>
+            <typeparam name="T">Type of enum</typeparam>
+            <param name="value">String value to convert</param>
+            <param name="ignoreCase">Ignore case</param>
+            <returns>Returns enum object</returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.ToPascalCase(System.String,System.Boolean)">
+            <summary>
+            Converts camelCase string to PascalCase string.
+            </summary>
+            <param name="str">String to convert</param>
+            <param name="invariantCulture">Invariant culture</param>
+            <returns>PascalCase of the string</returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.ToPascalCase(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Converts camelCase string to PascalCase string in specified culture.
+            </summary>
+            <param name="str">String to convert</param>
+            <param name="culture">An object that supplies culture-specific casing rules</param>
+            <returns>PascalCase of the string</returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.Truncate(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from beginning of the string if it exceeds maximum length.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.TruncateWithPostfix(System.String,System.Int32)">
+            <summary>
+            Gets a substring of a string from beginning of the string if it exceeds maximum length.
+            It adds a "..." postfix to end of the string if it's truncated.
+            Returning string can not be longer than maxLength.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.TruncateWithPostfix(System.String,System.Int32,System.String)">
+            <summary>
+            Gets a substring of a string from beginning of the string if it exceeds maximum length.
+            It adds given <paramref name="postfix"/> to end of the string if it's truncated.
+            Returning string can not be longer than maxLength.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.EqualsWithIgnoreCase(System.String,System.String)">
+            <summary>
+            忽略大小写比较
+            </summary>
+            <param name="source"></param>
+            <param name="toCompare"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.AESEncrypt(System.String,System.String)">
+            <summary>
+            AES加密
+            </summary>
+            <param name="original"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Extensions.StringExtensions.AESDecrypt(System.String,System.String)">
+            <summary>
+            AES解密
+            </summary>
+            <param name="encrypted"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.IRepositoryWithIntId`1">
+            <summary>
+            int主键基类
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.IRepositoryWithIntIdSoftDeletionAudited`1">
+            <summary>
+            int主键基类+删除审计+软删除
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.IRepositoryWithIntIdCreationAudited`1">
+            <summary>
+            int主键基类+添加审计
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.IRepositoryWithIntIdCreationModificationAudited`1">
+            <summary>
+            int主键基类+添加审计,修改审计
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.IRepositoryWithIntIdFullAudited`1">
+            <summary>
+            int主键基类+添加审计,修改审计,删除审计+软删除
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.IRepositoryWithGuid`1">
+            <summary>
+            Guid主键基类
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.IRepositoryWithGuidSoftDeletionAudited`1">
+            <summary>
+            Guid主键基类+删除审计+软删除
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.IRepositoryWithGuidCreationAudited`1">
+            <summary>
+            Guid主键基类+添加审计
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.IRepositoryWithGuidCreationModificationAudited`1">
+            <summary>
+            Guid主键基类+添加审计,修改审计
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.IRepositoryWithGuidFullAudited`1">
+            <summary>
+            Guid主键基类+添加审计,修改审计,删除审计+软删除
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2">
+            <summary>
+            仓储接口
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+            <typeparam name="TPrimaryKey">主键类型</typeparam>
+        </member>
+        <member name="P:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2.Context">
+            <summary>
+            数据库上下文
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2.QueryAsTracking">
+            <summary>
+            查询(Tracking)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2.QueryAsNoTracking">
+            <summary>
+            查询(NoTracking)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2.QueryAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+            <summary>
+            查询(通过Lamda表达式获取实体)
+            </summary>
+            <param name="predicate"></param>
+            <param name="isTracking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2.AnyAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            是否存在
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2.Add(`0)">
+            <summary>
+            新增
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量新增
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2.Update(`0)">
+            <summary>
+            更新
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2.UpdateRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量更新
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2.Remove(`0)">
+            <summary>
+            移除
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.IRepositoryWithTypedId`2.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量移除
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.RepositoryWithIntId`1">
+            <summary>
+            int主键仓储
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithIntId`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.RepositoryWithIntIdSoftDeletionAudited`1">
+            <summary>
+            int主键仓储+删除审计+软删除
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithIntIdSoftDeletionAudited`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.RepositoryWithIntIdCreationAudited`1">
+            <summary>
+            int主键仓储+添加审计
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithIntIdCreationAudited`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.RepositoryWithIntIdCreationModificationAudited`1">
+            <summary>
+            int主键仓储+添加审计,修改审计
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithIntIdCreationModificationAudited`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.RepositoryWithIntIdFullAudited`1">
+            <summary>
+            int主键仓储+添加审计,修改审计,删除审计+软删除
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithIntIdFullAudited`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.RepositoryWithGuid`1">
+            <summary>
+            Guid主键仓储
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithGuid`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.RepositoryWithGuidSoftDeletionAudited`1">
+            <summary>
+            Guid主键仓储+删除审计+软删除
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithGuidSoftDeletionAudited`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.RepositoryWithGuidCreationAudited`1">
+            <summary>
+            Guid主键仓储+添加审计
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithGuidCreationAudited`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.RepositoryWithGuidCreationModificationAudited`1">
+            <summary>
+            Guid主键仓储+添加审计,修改审计
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithGuidCreationModificationAudited`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.RepositoryWithGuidFullAudited`1">
+            <summary>
+            Guid主键仓储+添加审计,修改审计,删除审计+软删除
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithGuidFullAudited`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.Repository.RepositoryWithTypedId`2">
+            <summary>
+            仓储
+            </summary>
+            <typeparam name="TEntity">实体类型</typeparam>
+            <typeparam name="TPrimaryKey">主键类型</typeparam>
+        </member>
+        <member name="P:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.Context">
+            <summary>
+            数据库上下文
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.DbSet">
+            <summary>
+            数据集
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.QueryAsTracking">
+            <summary>
+            查询(Tracking)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.QueryAsNoTracking">
+            <summary>
+            查询(NoTracking)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.QueryAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+            <summary>
+            查询(通过Lamda表达式获取实体)
+            </summary>
+            <param name="predicate"></param>
+            <param name="isTracking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.AnyAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            是否存在
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.Add(`0)">
+            <summary>
+            新增 附加到DbContext上下文
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量新增 附加到DbContext上下文
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.Update(`0)">
+            <summary>
+            更新 附加到DbContext上下文
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.UpdateRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量更新
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.Remove(`0)">
+            <summary>
+            移除 附加到DbContext上下文
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.Repository.RepositoryWithTypedId`2.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            批量移除 附加到DbContext上下文
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="T:CBLibrary.Repository.UnitOfWork.IUnitOfWork">
+            <summary>
+            工作单元
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.UnitOfWork.IUnitOfWork.CommitAsync">
+            <summary>
+            提交到数据库(异步)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.UnitOfWork.IUnitOfWork.Commit">
+            <summary>
+            提交到数据库
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CBLibrary.Repository.UnitOfWork.UnitOfWork">
+            <summary>
+            工作单元
+            </summary>
+        </member>
+        <member name="P:CBLibrary.Repository.UnitOfWork.UnitOfWork.DbContext">
+            <summary>
+            数据库上下文
+            </summary>
+        </member>
+        <member name="M:CBLibrary.Repository.UnitOfWork.UnitOfWork.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:CBLibrary.Repository.UnitOfWork.UnitOfWork.CommitAsync">
+            <summary>
+            提交到数据库(异步)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.UnitOfWork.UnitOfWork.Commit">
+            <summary>
+            提交到数据库
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CBLibrary.Repository.UnitOfWork.UnitOfWork.Dispose">
+            <summary>
+            资源释放
+            </summary>
+        </member>
+    </members>
+</doc>
